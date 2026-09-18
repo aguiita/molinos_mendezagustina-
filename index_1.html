@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premezcla Dulce · Nueva versión del producto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F2F8F7;
+    --panel: #FFFFFF;
+    --teal: #1B7A73;
+    --teal-deep: #124F4B;
+    --blue: #2C6E9B;
+    --aqua-light: #C7E8E2;
+    --ink: #16303A;
+    --ink-soft: #4A6470;
+    --line: rgba(22,48,58,0.12);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.55;
+  }
+
+  h1, h2, h3{
+    font-family: 'Fraunces', serif;
+    color: var(--teal-deep);
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .wrap{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    padding: 28px 0 0;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    letter-spacing:0.02em;
+    color: var(--teal-deep);
+  }
+  .brand-mark{
+    width:14px; height:14px;
+    border-radius:4px;
+    background: linear-gradient(135deg, var(--teal), var(--blue));
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 64px 0 56px;
+    position: relative;
+  }
+  .hero-eyebrow{
+    color: var(--blue);
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+  .hero h1{
+    font-size: clamp(38px, 6vw, 58px);
+    line-height: 1.08;
+    max-width: 15ch;
+  }
+  .hero p{
+    max-width: 46ch;
+    color: var(--ink-soft);
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .wave{
+    position:absolute;
+    right: -60px;
+    top: 10px;
+    width: 260px;
+    height: 260px;
+    opacity: 0.9;
+    z-index: -1;
+  }
+
+  /* ---------- Sections ---------- */
+  section{
+    padding: 48px 0;
+    border-top: 1px solid var(--line);
+  }
+  section h2{
+    font-size: 28px;
+    margin-bottom: 18px;
+  }
+  section p{
+    color: var(--ink-soft);
+    max-width: 62ch;
+    font-size: 16.5px;
+  }
+
+  .grid-two{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  @media (max-width: 720px){
+    .grid-two{ grid-template-columns: 1fr; }
+  }
+
+  .feature-list{
+    list-style:none;
+    margin: 18px 0 0;
+    padding:0;
+  }
+  .feature-list li{
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    display:flex;
+    gap: 16px;
+    color: var(--ink-soft);
+  }
+  .feature-list li:first-child{ border-top: none; }
+  .feature-list strong{
+    color: var(--ink);
+    display:block;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .dot{
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex: 0 0 auto;
+    margin-top: 8px;
+  }
+
+  /* ---------- PDF section ---------- */
+  .doc-panel{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 28px;
+    margin-top: 24px;
+  }
+  .doc-panel-head{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .doc-panel-head h3{
+    font-size: 20px;
+  }
+  .doc-panel-head span{
+    color: var(--ink-soft);
+    font-size: 14px;
+  }
+
+  .pdf-frame{
+    width: 100%;
+    height: 640px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--aqua-light);
+  }
+  @media (max-width: 600px){
+    .pdf-frame{ height: 420px; }
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 10px;
+    background: var(--teal);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: background 0.15s ease;
+  }
+  .btn:hover{ background: var(--teal-deep); }
+  .btn.secondary{
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+  .btn.secondary:hover{ border-color: var(--blue); color: var(--blue); }
+  .actions{
+    display:flex;
+    gap: 12px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+  }
+
+  footer{
+    padding: 40px 0 60px;
+    color: var(--ink-soft);
+    font-size: 14px;
+    border-top: 1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="brand">
+    <span class="brand-mark"></span>
+    Premezcla Dulce
+  </div>
+</header>
+
+<section class="hero wrap" style="border-top:none;">
+  <svg class="wave" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#C7E8E2" d="M45,-58.4C58.4,-49.8,68.8,-33.6,72.6,-15.8C76.4,2,73.6,21.4,63.6,36.6C53.6,51.8,36.4,62.8,17.6,67.4C-1.2,72,-21.6,70.2,-38.4,60.8C-55.2,51.4,-68.4,34.4,-72.4,15.2C-76.4,-4,-71.2,-25.4,-58.6,-40.4C-46,-55.4,-26,-64,-5,-63C16,-62,31.6,-67,45,-58.4Z" transform="translate(100 100)"/>
+  </svg>
+  <!-- EDITAR: título y bajada del proyecto -->
+  <div class="hero-eyebrow">Proyecto · Desarrollo de producto</div>
+  <h1>Una nueva versión de la premezcla dulce</h1>
+  <p>
+    Presentación del proyecto que reformula la premezcla para mejorar su
+    composición, rendimiento y experiencia de preparación. Reemplazá este
+    texto por la bajada real de tu proyecto.
+  </p>
+</section>
+
+<section class="wrap">
+  <div class="grid-two">
+    <div>
+      <h2>Qué propone el proyecto</h2>
+      <p>
+        <!-- EDITAR: descripción general del proyecto -->
+        Espacio para describir en 3-4 líneas el problema que resuelve la
+        nueva versión de la premezcla, qué cambia respecto a la anterior y
+        a quién está destinada.
+      </p>
+    </div>
+    <div>
+      <h2>Puntos clave</h2>
+      <ul class="feature-list">
+        <!-- EDITAR: cambiá estos 3 puntos por los reales -->
+        <li><span class="dot"></span><div><strong>Formulación</strong>Qué ingrediente o proceso se modificó y por qué.</div></li>
+        <li><span class="dot"></span><div><strong>Beneficio</strong>Qué mejora concreta aporta (sabor, costo, vida útil, etc).</div></li>
+        <li><span class="dot"></span><div><strong>Alcance</strong>Etapa del proyecto y próximos pasos.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Documento completo</h2>
+  <p>Presentación en PDF con el detalle técnico y el desarrollo del proyecto.</p>
+
+  <div class="doc-panel">
+    <div class="doc-panel-head">
+      <h3>Presentación · Premezcla Dulce</h3>
+      <span>PDF alojado en Google Drive</span>
+    </div>
+
+    <!--
+      EDITAR ACÁ:
+      1) Compartí el PDF en Drive como "Cualquiera con el enlace"
+      2) Copiá el ID del archivo (está en la URL: .../d/ESTE_ID/view)
+      3) Pegalo reemplazando TU_ID_DE_DRIVE en las DOS líneas de abajo
+    -->
+    <iframe
+      class="pdf-frame"
+      src="https://drive.google.com/file/d/TU_ID_DE_DRIVE/preview"
+      allow="autoplay">
+    </iframe>
+
+    <div class="actions">
+      <a class="btn" href="https://drive.google.com/file/d/TU_ID_DE_DRIVE/view" target="_blank" rel="noopener">
+        Abrir en Drive
+      </a>
+      <a class="btn secondary" href="https://drive.google.com/file/d/TU_ID_DE_DRIVE/view" target="_blank" rel="noopener">
+        Descargar PDF
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <!-- EDITAR: tu nombre / info de contacto si querés -->
+  Agustina Méndez — Proyecto académico
+</footer>
+
+</body>
+</html>
